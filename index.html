@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Sổ tay đi Singapore: việc cần làm, giấy tờ, bảng phạt, chỗ đi và mẹo local.">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>Sổ tay Singapore</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap&subset=vietnamese">
+<style>
+/* Layout: one left-aligned column (~44rem). Hero is a hawker-signboard headline; fines are the only place pink appears.
+   Palette from Peranakan tiles: jade, nyonya pink, kaya yellow on a cool off-white. */
+:root{
+  --bg:#f6f9f8; --paper:#ffffff; --ink:#10302b; --muted:#56706b; --rule:#d5e2df;
+  --jade:#127a68; --jade-soft:#dcefea; --pink:#c8325e; --pink-soft:#fbe4ea; --kaya:#e2a92b; --kaya-soft:#fbf0d4;
+  --display:"Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
+  --body:"Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0c1a18; --paper:#122522; --ink:#e6f1ee; --muted:#93aca6; --rule:#24403b;
+  --jade:#4cc7ae; --jade-soft:#143a33; --pink:#ff7b9e; --pink-soft:#3a1823; --kaya:#f2c45e; --kaya-soft:#352a10; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c1a18; --paper:#122522; --ink:#e6f1ee; --muted:#93aca6; --rule:#24403b;
+  --jade:#4cc7ae; --jade-soft:#143a33; --pink:#ff7b9e; --pink-soft:#3a1823; --kaya:#f2c45e; --kaya-soft:#352a10; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.65 var(--body)}
+a{color:var(--jade);text-underline-offset:3px}
+.wrap{max-width:44rem;margin:0 auto;padding-inline:20px;padding-block:28px 72px}
+h1,h2,h3{text-wrap:balance;margin:0}
+h2{font-family:var(--display);font-weight:900;font-size:clamp(2.2rem,7vw,3rem);line-height:.95;letter-spacing:.005em}
+h3{font-size:1.05rem;font-weight:700;line-height:1.35}
+p{margin:0}
+.muted{color:var(--muted)}
+
+/* ---------- hero ---------- */
+.hero{padding-block:8px 28px;border-bottom:3px solid var(--ink)}
+.hero h1{font-family:var(--display);font-weight:900;font-size:clamp(4rem,19vw,8.6rem);line-height:.82;letter-spacing:-.01em;text-transform:none}
+.hero h1 span{display:block}
+.hero .pun{color:var(--pink)}
+.hero .sub{max-width:34rem;margin-top:20px;font-size:1.08rem}
+.hero .when{margin-top:10px;font-size:.88rem;color:var(--muted)}
+
+/* ---------- sticky nav + progress ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);margin-inline:-20px;padding:10px 20px;border-bottom:1px solid var(--rule)}
+.bar nav{display:flex;gap:18px;overflow-x:auto;white-space:nowrap;font-weight:600;font-size:.92rem;scrollbar-width:none}
+.bar nav a{color:var(--ink);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}
+.bar nav a:hover{border-color:var(--jade)}
+.prog{display:flex;align-items:center;gap:12px;margin-top:8px;font-size:.85rem;color:var(--muted)}
+.track{flex:1;height:6px;background:var(--rule);border-radius:3px;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:var(--jade);transition:width .35s ease}
+.prog b{color:var(--ink);font-variant-numeric:tabular-nums}
+
+section{margin-top:64px;scroll-margin-top:96px}
+.lead{margin-top:12px;max-width:38rem;color:var(--muted)}
+
+/* ---------- timeline checklist ---------- */
+.timeline{margin-top:28px;display:grid;gap:34px}
+.stop{display:grid;grid-template-columns:2.2rem 1fr;gap:0 14px;position:relative}
+.stop::before{content:"";position:absolute;left:calc(1.1rem - 1.5px);top:2.2rem;bottom:-34px;width:3px;background:var(--rule)}
+.stop:last-child::before{display:none}
+.dot{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--paper);border:3px solid var(--jade);display:grid;place-items:center;font-weight:700;font-size:.85rem;color:var(--jade);position:relative;z-index:1;font-variant-numeric:tabular-nums}
+.stop.full .dot{background:var(--jade);color:var(--paper)}
+.stop-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:4px}
+.stop-head h3{font-size:1.2rem}
+.cnt{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.items{grid-column:2;margin-top:8px}
+.it{display:grid;grid-template-columns:1.4rem 1fr;gap:12px;padding:11px 0;border-top:1px solid var(--rule);cursor:pointer}
+.it:first-child{border-top:0}
+.it input{appearance:none;-webkit-appearance:none;width:1.25rem;height:1.25rem;margin:3px 0 0;border:2px solid var(--muted);border-radius:4px;background:var(--paper);cursor:pointer;display:grid;place-items:center}
+.it input:checked{background:var(--jade);border-color:var(--jade)}
+.it input:checked::after{content:"";width:.35rem;height:.65rem;border:solid var(--paper);border-width:0 2.5px 2.5px 0;transform:translateY(-1px) rotate(45deg)}
+.it input:focus-visible{outline:2px solid var(--kaya);outline-offset:2px}
+.it .t{min-width:0}
+.it .t strong{font-weight:600}
+.it .t small{display:block;font-size:.9rem;color:var(--muted);margin-top:2px}
+.it:has(input:checked) strong{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1.5px}
+.req{display:inline-block;margin-left:6px;font-size:.75rem;font-weight:600;color:var(--pink);background:var(--pink-soft);border-radius:3px;padding:0 6px;vertical-align:1px}
+.reset{font:inherit;font-size:.85rem;background:none;border:0;color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer;padding:0}
+.reset.armed{color:var(--pink)}
+
+/* ---------- docs ---------- */
+.doc{margin-top:26px;padding:18px 20px;background:var(--paper);border-radius:6px}
+.doc h3{font-size:1.15rem;display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+.doc .how{font-size:.8rem;font-weight:600;color:var(--jade)}
+.doc dl{margin:12px 0 0;display:grid;grid-template-columns:7.5rem 1fr;gap:8px 16px;font-size:.95rem}
+.doc dt{color:var(--muted)}
+.doc dd{margin:0;min-width:0;overflow-wrap:anywhere}
+@media (max-width:520px){.doc dl{grid-template-columns:1fr;gap:2px}.doc dd{margin-bottom:8px}}
+
+/* ---------- immigration chat ---------- */
+.chat{margin-top:24px;display:grid;gap:10px}
+.msg{max-width:85%;padding:10px 14px;border-radius:14px;font-size:.98rem}
+.msg.them{background:var(--paper);border:1px solid var(--rule);border-bottom-left-radius:4px;justify-self:start}
+.msg.you{background:var(--jade);color:var(--paper);border-bottom-right-radius:4px;justify-self:end}
+.msg .who{display:block;font-size:.75rem;opacity:.75;margin-bottom:2px}
+.tipbox{margin-top:22px;padding:16px 18px;background:var(--kaya-soft);border-radius:6px;font-size:.95rem}
+.tipbox ul{margin:8px 0 0;padding-left:18px}
+.tipbox li{margin-bottom:6px}
+
+/* ---------- fines ---------- */
+.finegroup{margin-top:34px}
+.finegroup>h3{font-size:1.15rem;padding-bottom:8px;border-bottom:3px solid var(--ink)}
+.fine{display:grid;grid-template-columns:8.5rem 1fr;gap:4px 18px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.amt{font-family:var(--display);font-weight:900;font-size:1.7rem;line-height:1;color:var(--pink);font-variant-numeric:tabular-nums}
+.amt.word{font-size:1.35rem}
+.amt.soft{color:var(--muted)}
+.fine h4{margin:0;font-size:1rem;font-weight:600;line-height:1.35}
+.fine p{font-size:.92rem;color:var(--muted);margin-top:3px}
+.fresh{font-size:.72rem;font-weight:600;color:var(--ink);background:var(--kaya);border-radius:3px;padding:0 6px;margin-left:6px;vertical-align:2px;white-space:nowrap}
+@media (max-width:520px){.fine{grid-template-columns:1fr}.amt{font-size:1.5rem}}
+
+/* ---------- places ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.filters button{font:inherit;font-size:.9rem;font-weight:500;color:var(--ink);background:transparent;border:1.5px solid var(--rule);border-radius:999px;padding:5px 14px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.filters button:focus-visible{outline:2px solid var(--kaya);outline-offset:2px}
+.places{margin-top:14px}
+.pl{padding:14px 0;border-bottom:1px solid var(--rule);display:grid;gap:3px}
+.pl-top{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.pl h3{font-size:1.05rem}
+.pl .where{font-size:.88rem;color:var(--muted)}
+.pl p{font-size:.95rem}
+.pl .meta{font-size:.82rem;font-weight:600;display:flex;gap:10px;flex-wrap:wrap}
+.meta .free{color:var(--jade)}
+.meta .new{color:var(--kaya)}
+.meta .cash{color:var(--muted)}
+.meta .care{color:var(--pink)}
+.none{padding:18px 0;color:var(--muted)}
+
+/* ---------- tips ---------- */
+.tip{margin-top:30px}
+.tip h3{font-size:1.15rem}
+.tip ul{margin:10px 0 0;padding-left:20px}
+.tip li{margin-bottom:8px}
+.kopi{margin-top:12px;width:100%;border-collapse:collapse;font-size:.95rem}
+.kopi th{text-align:left;font-weight:600;padding:8px 10px 8px 0;border-bottom:1px solid var(--rule);white-space:nowrap;vertical-align:top}
+.kopi td{padding:8px 0;border-bottom:1px solid var(--rule)}
+.order{display:inline-block;margin-top:12px;padding:8px 14px;background:var(--paper);border:1px dashed var(--jade);border-radius:6px;font-weight:600}
+
+
+/* ---------- rate block ---------- */
+.rate{margin-top:28px;padding:22px 20px 20px;background:var(--ink);color:var(--bg);border-radius:6px}
+.rate .lbl{font-size:.9rem;opacity:.8}
+.rate .big{font-family:var(--display);font-weight:900;line-height:.9;font-size:clamp(3.4rem,15vw,6.4rem);margin-top:6px;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.rate .big small{font-size:.38em;font-weight:700;margin-left:.15em}
+.rate .math{margin-top:10px;font-size:1rem}
+.rate .math b{color:var(--kaya)}
+.conv{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.conv label{display:grid;gap:4px;font-size:.85rem;opacity:.9}
+.conv input{font:inherit;font-size:1.25rem;font-weight:600;font-variant-numeric:tabular-nums;width:100%;min-width:0;padding:8px 10px;border-radius:6px;border:2px solid transparent;background:var(--bg);color:var(--ink)}
+.conv input:focus-visible{outline:none;border-color:var(--kaya)}
+.ref{margin-top:16px;width:100%;border-collapse:collapse;font-size:.95rem}
+.ref td{padding:7px 0;border-top:1px solid color-mix(in srgb,var(--bg) 22%,transparent);font-variant-numeric:tabular-nums}
+.ref td:nth-child(2){text-align:right;font-weight:600;white-space:nowrap;padding-left:12px}
+.ref td:last-child{text-align:right;opacity:.75;padding-left:12px}
+.rate-note{margin-top:12px;font-size:.82rem;opacity:.75}
+.rate-edit{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:12px;font-size:.85rem}
+.rate-edit input{font:inherit;width:7.5rem;padding:4px 8px;border-radius:4px;border:1px solid transparent;background:var(--bg);color:var(--ink);font-variant-numeric:tabular-nums}
+@media (max-width:420px){.conv{grid-template-columns:1fr}}
+footer{margin-top:72px;padding-top:16px;border-top:3px solid var(--ink);font-size:.85rem;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track i{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <h1><span>Singapore</span><span>is a</span><span class="pun">fine city.</span></h1>
+  <p class="sub">Câu đùa của chính dân Singapore: "fine" vừa là đẹp, vừa là tiền phạt. Đảo này đẹp thật, và phạt cũng thật. Sổ tay này để bạn đi chơi cho sướng mà không mất đồng nào oan.</p>
+  <p class="when">Cập nhật 01/10/2026. Dấu tick lưu trên trình duyệt bạn đang mở.</p>
+</header>
+
+
+<section class="rate" id="tygia" aria-label="Tỷ giá SGD sang VND" style="margin-top:28px;scroll-margin-top:96px">
+  <div class="lbl">1 đô Singapore đổi được khoảng</div>
+  <div class="big"><span id="rateBig">20.320</span><small>₫</small></div>
+  <p class="math">Nhẩm nhanh: giá SGD <b>nhân 2</b> rồi <b>thêm 4 số 0</b>. Đĩa cơm 6 SGD thành 12, thêm 4 số 0 là khoảng 120.000 ₫. Thực tế đắt hơn chút xíu.</p>
+  <div class="conv">
+    <label for="inSgd">Đô Singapore (SGD)<input id="inSgd" type="text" inputmode="decimal" value="10"></label>
+    <label for="inVnd">Tiền Việt (VND)<input id="inVnd" type="text" inputmode="numeric" value=""></label>
+  </div>
+  <table class="ref" id="refTable">
+    <tr data-s="2"><td>Ly kopi ở hawker</td><td></td><td>2 SGD</td></tr>
+    <tr data-s="6"><td>Đĩa cơm gà, tô mì ở hawker</td><td></td><td>6 SGD</td></tr>
+    <tr data-s="25"><td>Grab từ Changi vào trung tâm</td><td></td><td>25 SGD</td></tr>
+    <tr data-s="50"><td>Tiền mặt nên cầm theo</td><td></td><td>50 SGD</td></tr>
+    <tr data-s="100"><td>Mức mua tối thiểu để hoàn thuế</td><td></td><td>100 SGD</td></tr>
+  </table>
+  <div class="rate-edit"><label for="inRate">Tỷ giá đang dùng</label><input id="inRate" type="text" inputmode="numeric" value="20320"><span>₫ cho 1 SGD. Sửa số này khi tỷ giá đổi, cả bảng tự tính lại.</span></div>
+  <p class="rate-note">Tỷ giá trung bình thị trường ngày 01/10/2026 theo XE. Quẹt thẻ ngân hàng VN hay đổi ở quầy thường thiệt thêm khoảng 2 đến 4%, chưa kể phí giao dịch ngoại tệ.</p>
+</section>
+
+<div class="bar">
+  <nav aria-label="Mục lục">
+    <a href="#tygia">Tỷ giá</a><a href="#lich">Việc cần làm</a><a href="#giayto">Giấy tờ</a><a href="#landau">Lần đầu đi</a><a href="#nhapcanh">Qua cửa khẩu</a><a href="#phat">Bảng phạt</a><a href="#di">Đi đâu</a><a href="#meo">Mẹo local</a>
+  </nav>
+  <div class="prog" aria-live="polite"><span>Xong <b id="done">0</b>/<b id="total">0</b></span><div class="track"><i id="fill"></i></div><button type="button" class="reset" id="reset">Bỏ tick hết</button></div>
+</div>
+
+<!-- ================= CHECKLIST ================= -->
+<section id="lich">
+  <h2>Việc cần làm, theo ngày</h2>
+  <p class="lead">Đi từ trên xuống. Mấy dòng có chữ "bắt buộc" mà quên là có thể bị chặn ngay ở Nội Bài, hoặc bị trả về từ Changi.</p>
+
+  <div class="timeline">
+    <div class="stop" data-group>
+      <div class="dot">1</div>
+      <div class="stop-head"><h3>2 đến 4 tuần trước</h3><span class="cnt"></span></div>
+      <div class="items">
+        <label class="it"><input type="checkbox" id="c-passport"><span class="t"><strong>Hộ chiếu còn hạn trên 6 tháng</strong><span class="req">bắt buộc</span><small>Tính từ ngày tới Singapore. Còn vài trang trống.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-ticket"><span class="t"><strong>Đặt vé khứ hồi, xin địa chỉ nhà bạn ở bên đó</strong><small>Người Việt được ở tối đa 30 ngày không cần visa. Xin đủ địa chỉ có số nhà, số căn hộ và mã bưu chính 6 số, vì SGAC bắt điền và cán bộ hay hỏi.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-card"><span class="t"><strong>Chọn một thẻ Visa/Master quẹt chạm được</strong><small>Thẻ này quẹt thẳng vào cổng MRT luôn. Gọi ngân hàng hỏi phí ngoại tệ, mỗi lần quẹt đều bị tính.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-bankintl"><span class="t"><strong>Bật dùng thẻ ở nước ngoài trong app ngân hàng</strong><small>Nhiều app ngân hàng VN tắt sẵn mục thanh toán quốc tế. Không bật là sang đến nơi quẹt thẻ bị từ chối. Làm thử một giao dịch nhỏ trên web nước ngoài để chắc.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-cvqt"><span class="t"><strong>Mở chuyển vùng quốc tế cho SIM Viettel</strong><small>Nhắn CVQT gửi 138 hoặc bật trong app My Viettel. Bật để còn nhận SMS mã OTP ngân hàng. Data thì xem phần Lần đầu đi.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-cash"><span class="t"><strong>Đổi khoảng 50 đến 100 SGD tiền mặt</strong><small>Để ăn hawker, đi đò ra Pulau Ubin, trả tiền nhà vệ sinh.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-esim"><span class="t"><strong>Cài eSIM sẵn</strong><small>Hạ cánh bật data là gọi được Grab.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-plug"><span class="t"><strong>Mua cục chuyển ổ cắm Type G</strong><small>Loại 3 chân vuông kiểu Anh. Sạc mang từ VN không cắm thẳng được.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-rts"><span class="t"><strong>Nếu đi qua Johor Bahru: xem tàu RTS chạy chưa</strong><small>Tuyến JB Sentral sang Woodlands North dự kiến mở cuối 2026. Mở rồi thì đỡ kẹt cầu hẳn.</small></span></label>
+      </div>
+    </div>
+
+    <div class="stop" data-group>
+      <div class="dot">2</div>
+      <div class="stop-head"><h3>Trong 3 ngày trước khi bay</h3><span class="cnt"></span></div>
+      <div class="items">
+        <label class="it"><input type="checkbox" id="c-sgac"><span class="t"><strong>Khai SG Arrival Card</strong><span class="req">bắt buộc</span><small>Từ 30/01/2026 hãng bay check với ICA trước giờ bay. Chưa khai thì có thể không được lên máy bay ở VN luôn.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-mdac"><span class="t"><strong>Khai MDAC nếu có ghé Malaysia</strong><small>Miễn visa vẫn phải khai. Tắt VPN trước khi vào trang.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-qr"><span class="t"><strong>Chụp màn hình mã QR</strong><small>Wifi sân bay không phải lúc nào cũng chiều mình.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-proof"><span class="t"><strong>Lưu vé về, địa chỉ và số điện thoại người bạn vào album ảnh</strong><small>Bị hỏi thì mở ra trong 5 giây, đừng ngồi lục tin nhắn. Bảo bạn bên kia để máy hôm đó, cán bộ có thể gọi xác minh.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-weather"><span class="t"><strong>Xem dự báo thời tiết</strong><small>Tháng 10, 11 hay mưa giông buổi chiều. Việc ngoài trời dồn vào buổi sáng.</small></span></label>
+      </div>
+    </div>
+
+    <div class="stop" data-group>
+      <div class="dot">3</div>
+      <div class="stop-head"><h3>Hôm bay</h3><span class="cnt"></span></div>
+      <div class="items">
+        <label class="it"><input type="checkbox" id="c-bag-pass"><span class="t"><strong>Hộ chiếu, ví, thẻ, tiền mặt</strong><span class="req">bắt buộc</span></span></label>
+        <label class="it"><input type="checkbox" id="c-bag-cig"><span class="t"><strong>Không cầm thuốc lá điếu</strong><small>Singapore không miễn thuế thuốc lá, 1 điếu cũng phải khai và đóng thuế.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-bag-gum"><span class="t"><strong>Không cầm kẹo cao su</strong><small>Kẹo cai thuốc hoặc kẹo nha khoa thì được.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-bag-tissue"><span class="t"><strong>Khăn giấy, ô gấp, bình nước rỗng</strong><small>Khăn giấy dùng để giữ bàn ở hawker, đọc phần Mẹo sẽ hiểu. Nước máy uống thẳng được.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-bag-answer"><span class="t"><strong>Đọc lại đoạn hội thoại ở phần Qua cửa khẩu</strong></span></label>
+      </div>
+    </div>
+
+    <div class="stop" data-group>
+      <div class="dot">4</div>
+      <div class="stop-head"><h3>Hôm về</h3><span class="cnt"></span></div>
+      <div class="items">
+        <label class="it"><input type="checkbox" id="c-etrs"><span class="t"><strong>Lấy lại 9% thuế ở kiosk eTRS</strong><small>Đồ để trong vali ký gửi thì làm trước khi gửi hành lý. Đồ xách tay thì làm sau khi qua xuất cảnh.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-jewel"><span class="t"><strong>Ra sân bay sớm 3 đến 4 tiếng</strong><small>Jewel vào được trước khi check-in. Ngồi xem thác Rain Vortex miễn phí.</small></span></label>
+        <label class="it"><input type="checkbox" id="c-ezlink"><span class="t"><strong>Tiêu hết tiền xu SGD</strong><small>Mang về VN không ai đổi.</small></span></label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DOCS ================= -->
+<section id="giayto">
+  <h2>Giấy tờ</h2>
+  <p class="lead">SGAC với MDAC đều miễn phí và chỉ làm online, ở sân bay không còn tờ khai giấy nữa. Trang nào đòi tiền là trang trung gian.</p>
+
+  <div class="doc">
+    <h3>Hộ chiếu <span class="how">online hoặc đến nộp</span></h3>
+    <dl>
+      <dt>Online</dt><dd><a href="https://dichvucong.gov.vn" target="_blank" rel="noopener">dichvucong.gov.vn</a> hoặc <a href="https://dichvucong.bocongan.gov.vn" target="_blank" rel="noopener">dichvucong.bocongan.gov.vn</a>. Điền tờ khai TK01, tải ảnh 4×6 nền trắng và CCCD gắn chip. Duyệt xong 1 đến 3 ngày mới có link nộp tiền.</dd>
+      <dt>Đến nộp</dt><dd>Phòng Quản lý Xuất nhập cảnh Công an Hà Nội, số 6 Quang Trung, Hà Đông. Gọi trước hỏi giờ, sau đợt sáp nhập có chỗ đổi địa chỉ.</dd>
+      <dt>Bao lâu</dt><dd>Khoảng 8 ngày làm việc. Nộp ở Cục XNC Bộ Công an thì khoảng 5 ngày.</dd>
+      <dt>Hay bị trả</dt><dd>Vì ảnh. Mặt nhỏ quá, nền ngả màu, đeo kính, cười hở răng.</dd>
+    </dl>
+  </div>
+
+  <div class="doc">
+    <h3>SG Arrival Card <span class="how">chỉ online</span></h3>
+    <dl>
+      <dt>Khai ở</dt><dd><a href="https://www.ica.gov.sg/eservicesandforms/sgarrivalcard" target="_blank" rel="noopener">trang SGAC của ICA</a>, hoặc app MyICA trên App Store và Google Play.</dd>
+      <dt>Lúc nào</dt><dd>Trong 3 ngày trước khi đến, tính cả ngày đến. Ngày 10 bay thì từ ngày 8 khai được.</dd>
+      <dt>Điền gì</dt><dd>Chọn Foreign Visitors, rồi điền hộ chiếu, chuyến bay, chỗ ở, khai y tế. Soát kỹ số hộ chiếu và số hiệu chuyến bay rồi mới Submit. Email xác nhận gửi về ngay.</dd>
+      <dt>Ô chỗ ở</dt><dd>Ở nhà bạn thì chọn loại chỗ ở là nhà riêng (residential), điền đúng địa chỉ và mã bưu chính 6 số của căn nhà bạn kia đang ở.</dd>
+      <dt>Đi theo nhóm</dt><dd>Group Submission khai một lần cho tối đa 10 người đi cùng chuyến.</dd>
+      <dt>Bố mẹ đi cùng</dt><dd>Ai không quen điện thoại thì mình khai hộ trên trang chính thức. Changi không có quầy khai hộ.</dd>
+    </dl>
+  </div>
+
+  <div class="doc">
+    <h3>MDAC (Malaysia) <span class="how">chỉ online</span></h3>
+    <dl>
+      <dt>Khai ở</dt><dd><a href="https://imigresen-online.imi.gov.my/mdac/main" target="_blank" rel="noopener">imigresen-online.imi.gov.my/mdac/main</a></dd>
+      <dt>Lúc nào</dt><dd>Trong 3 ngày trước khi vào Malaysia. Mỗi người một tờ, trẻ con cũng vậy.</dd>
+      <dt>Lưu ý</dt><dd>Bật VPN là trang chặn. Cửa khẩu Malaysia không có quầy làm MDAC.</dd>
+    </dl>
+  </div>
+
+  <div class="doc">
+    <h3>Hoàn thuế GST <span class="how">làm ở shop và ở sân bay</span></h3>
+    <dl>
+      <dt>Đủ điều kiện</dt><dd>Mua từ 100 SGD ở một shop có dán Tax Free, trong cùng một ngày. Gộp được tối đa 3 hoá đơn của cùng shop đó.</dd>
+      <dt>Lúc trả tiền</dt><dd>Đưa hộ chiếu thật cho thu ngân. Ảnh chụp không được, quay lại bổ sung sau cũng không được.</dd>
+      <dt>Ở sân bay</dt><dd>Kiosk eTRS có ở Changi T1 đến T4 và tầng 1 Jewel. Tra lại giao dịch ở <a href="https://touristrefund.sg" target="_blank" rel="noopener">touristrefund.sg</a>.</dd>
+    </dl>
+  </div>
+</section>
+
+<!-- ================= FIRST TIMER ================= -->
+<section id="landau">
+  <h2>Lần đầu ra nước ngoài</h2>
+  <p class="lead">Chưa đi bao giờ thì cái khó nhất là không biết bước tiếp theo là gì. Phần này đi lần lượt từ lúc ra Nội Bài đến lúc vào được trung tâm Singapore.</p>
+
+  <div class="timeline">
+    <div class="stop"><div class="dot">1</div><div class="stop-head"><h3>Ở Nội Bài, nhà ga T2</h3></div>
+      <div class="items"><div class="tip" style="margin-top:0"><ul>
+        <li>Có mặt trước giờ bay 3 tiếng. Quầy check-in đóng trước giờ bay khoảng 50 đến 60 phút, đến muộn là mất vé.</li>
+        <li>Check-in: đưa hộ chiếu, gửi vali, nhận thẻ lên máy bay. Nhân viên có thể hỏi vé về, cứ mở ảnh ra.</li>
+        <li>Qua soi chiếu: chất lỏng xách tay mỗi chai tối đa 100 ml, tổng không quá 1 lít, bỏ chung vào túi zip trong suốt. Laptop rút ra khay riêng.</li>
+        <li>Sạc dự phòng và pin rời phải để trong balo xách tay, không được để trong vali ký gửi. Nhiều hãng còn cấm dùng sạc dự phòng trong lúc bay.</li>
+        <li>Xuất cảnh: đưa hộ chiếu và thẻ lên máy bay cho công an cửa khẩu, hoặc đi làn tự động nếu có. Xong là vào khu chờ, xem số cửa ra máy bay trên thẻ và trên màn hình.</li>
+      </ul></div></div></div>
+    <div class="stop"><div class="dot">2</div><div class="stop-head"><h3>Hạ cánh ở Changi</h3></div>
+      <div class="items"><div class="tip" style="margin-top:0"><ul>
+        <li>Giờ Singapore nhanh hơn Việt Nam 1 tiếng. Điện thoại tự đổi, đồng hồ đeo tay thì chỉnh tay.</li>
+        <li>Xuống máy bay cứ đi theo biển Arrival hoặc Immigration. Đừng rẽ theo biển Transfer, cái đó cho người bay tiếp.</li>
+        <li>Lần đầu vào thường phải ra quầy có người, lấy vân tay, chụp mặt, quét mống mắt. Trả lời như đoạn hội thoại ở phần dưới.</li>
+        <li>Lấy vali ở băng chuyền ghi số chuyến bay. Không mang thuốc lá hay đồ phải khai thì đi lối xanh (Nothing to Declare).</li>
+      </ul></div></div></div>
+    <div class="stop"><div class="dot">3</div><div class="stop-head"><h3>Từ sân bay về nhà người bạn</h3></div>
+      <div class="items"><div class="tip" style="margin-top:0"><ul>
+        <li>MRT: ga Changi Airport nằm dưới nhà ga T2 và T3, tuyến màu xanh lá. Đến ga Tanah Merah thì đổi tàu để vào trung tâm. Quẹt thẻ Visa ở cổng là đi. Vào đến trung tâm mất khoảng một tiếng.</li>
+        <li>Grab hoặc taxi vào trung tâm khoảng 20 đến 30 SGD, đắt hơn nếu đi đêm. Đi đêm hoặc kéo vali to thì nên gọi Grab.</li>
+        <li>Tốt nhất là nhờ người bạn ra đón hôm đầu, hoặc ít ra là gửi sẵn đường đi chi tiết.</li>
+      </ul></div></div></div>
+  </div>
+
+  <div class="tip">
+    <h3>Mạng điện thoại: roaming hay eSIM</h3>
+    <ul>
+      <li>Cách mình khuyên: giữ SIM Viettel để nhận SMS, mua thêm eSIM du lịch để dùng data. Máy phải hỗ trợ eSIM, iPhone XS trở lên và đa số Android đời mới đều có.</li>
+      <li>Phải giữ SIM Viettel vì mã OTP của ngân hàng và ví điện tử gửi qua SMS về số này. Ở nước ngoài nhận SMS thường không mất tiền.</li>
+      <li>Nếu dùng data roaming Viettel thì phải đăng ký gói trước khi bay. Không có gói mà để data chạy thì cước tính theo từng KB, mở vài cái video là ra hoá đơn mấy trăm nghìn. Xem gói cho Singapore trong app My Viettel, giá đổi theo từng đợt.</li>
+      <li>Chưa đăng ký gói thì vào Cài đặt tắt Chuyển vùng dữ liệu (Data Roaming) cho SIM Viettel trước khi máy bay cất cánh, chỉ để data chạy qua eSIM.</li>
+      <li>Không có eSIM thì mua SIM du lịch của Singtel, StarHub hoặc M1 ở sảnh đến Changi. Mang hộ chiếu theo để đăng ký.</li>
+      <li>Ở Singapore có wifi miễn phí Wireless@SG ở nhiều nơi công cộng, MRT và mall cũng hay có wifi.</li>
+    </ul>
+  </div>
+
+  <div class="tipbox">
+    <strong>Mấy thứ người đi lần đầu hay quên</strong>
+    <ul>
+      <li>Hộ chiếu để ở nhà người bạn, ra đường mang ảnh chụp là được. Chỉ mang hộ chiếu thật theo hôm định mua sắm để hoàn thuế, vì shop cần hộ chiếu gốc.</li>
+      <li>Số khẩn cấp: cảnh sát 999, cấp cứu và cứu hoả 995.</li>
+      <li>Lạc đường thì hỏi người đi đường bằng tiếng Anh. Người Singapore nói tiếng Anh ai cũng hiểu, hầu hết sẵn lòng chỉ.</li>
+      <li>Lưu số điện thoại người bạn ở chỗ không cần mạng cũng xem được, ví dụ chụp màn hình hoặc ghi ra giấy.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= IMMIGRATION ================= -->
+<section id="nhapcanh">
+  <h2>Qua cửa khẩu</h2>
+  <p class="lead">Cán bộ ICA hỏi nhanh và ngắn. Mình trả lời ngắn và khớp với giấy tờ là xong. Thường người ta bị mời vào phòng riêng vì ấp úng, hoặc vì nói một đằng mà booking một nẻo.</p>
+
+  <div class="chat">
+    <div class="msg them"><span class="who">Cán bộ</span>What's the purpose of your visit?</div>
+    <div class="msg you"><span class="who">Bạn</span>Holiday.</div>
+    <div class="msg them"><span class="who">Cán bộ</span>How long are you staying?</div>
+    <div class="msg you"><span class="who">Bạn</span>Four days. I fly back on the 14th.</div>
+    <div class="msg them"><span class="who">Cán bộ</span>Where are you staying?</div>
+    <div class="msg you"><span class="who">Bạn</span>At my friend's place in [khu, ví dụ Clementi].</div>
+    <div class="msg them"><span class="who">Cán bộ</span>Who is your friend?</div>
+    <div class="msg you"><span class="who">Bạn</span>They're a Vietnamese student at [tên trường]. Here's their address and phone number.</div>
+    <div class="msg them"><span class="who">Cán bộ</span>Do you have a return ticket?</div>
+    <div class="msg you"><span class="who">Bạn</span>Yes, here. <em>(mở ảnh đã chụp sẵn)</em></div>
+    <div class="msg them"><span class="who">Cán bộ</span>What do you do in Vietnam?</div>
+    <div class="msg you"><span class="who">Bạn</span>I work in IT at Viettel, a telecom company in Vietnam.</div>
+  </div>
+
+  <div class="tipbox">
+    <strong>Mấy chuyện hay vấp</strong>
+    <ul>
+      <li>Ở nhà bạn thì cán bộ hay hỏi kỹ hơn ở khách sạn một chút. Biết tên trường, tên khu, và cho xem được địa chỉ với số điện thoại của bạn kia là đủ.</li>
+      <li>Số ngày nói ra phải khớp với vé về. Nói ở bốn ngày mà vé về sau hai tuần là bị hỏi tiếp.</li>
+      <li>Nếu bạn kia ở ký túc xá trường (hall, hostel của NUS, NTU, SMU...) thì hỏi trước. Ký túc xá ở đây thường cấm khách ngủ lại qua đêm, bị phát hiện thì người thuê bị phạt.</li>
+      <li>Không cần cầm cục tiền dày, nhưng phải cho thấy mình đủ tiền tiêu. Tiền mặt cộng thẻ là được.</li>
+      <li>Lần đầu vào sẽ lấy vân tay, mặt và mống mắt. Từ lần sau thường đi làn tự động.</li>
+      <li>Ở khu nhập cảnh không chụp ảnh, không quay phim.</li>
+      <li>Nếu bị mời vào phòng riêng thì cứ bình tĩnh trả lời như trên. Khách ASEAN đi lẻ gặp chuyện này khá thường.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FINES ================= -->
+<section id="phat">
+  <h2>Bảng phạt</h2>
+  <p class="lead">Khách du lịch cũng bị phạt y như dân. Số bên trái là mức cao nhất theo luật, lần đầu vi phạm nhẹ có khi chỉ bị phạt ít hơn. Mấy dòng chữ thay cho số là loại không còn chuyện phạt tiền nữa.</p>
+
+  <div class="finegroup">
+    <h3>Mang theo người, mang vào nước</h3>
+    <div class="fine"><span class="amt word">Tử hình</span><div><h4>Ma tuý, kể cả cần sa</h4><p>Mức tử hình áp dụng cho buôn bán. Họ có thể xét nghiệm ngay lúc nhập cảnh. Lỡ dùng ở nước khác mà dương tính khi vào đây thì vẫn có thể bị truy cứu.</p></div></div>
+    <div class="fine"><span class="amt word">Thu + phạt</span><div><h4>Thuốc lá điếu không khai báo</h4><p>Không có miễn thuế, 1 điếu cũng không. Bao bì không đúng chuẩn của Singapore thì bị tịch thu ngay ở cửa khẩu.</p></div></div>
+    <div class="fine"><span class="amt word">Tịch thu</span><div><h4>Thuốc có chất kiểm soát mà chưa xin phép</h4><p>Codeine, thuốc ngủ, thuốc an thần, thuốc ADHD. Xin phép HSA trước khi đi và mang theo đơn thuốc.</p></div></div>
+    <div class="fine"><span class="amt word">Đóng thuế</span><div><h4>Rượu khi đi từ Malaysia sang</h4><p>Đi từ Malaysia thì không được miễn thuế rượu. Bay thẳng từ VN thì được 2 lít theo tổ hợp quy định.</p></div></div>
+    <div class="fine"><span class="amt">S$1.000</span><div><h4>Kẹo cao su</h4><p>Cấm nhập và cấm bán. Kẹo cai thuốc, kẹo nha khoa thì không sao.</p></div></div>
+    <div class="fine"><span class="amt soft">S$20.000+</span><div><h4>Cầm tiền mặt trên mức này phải khai</h4><p>Tính tổng mọi loại tiền sau khi quy đổi.</p></div></div>
+  </div>
+
+  <div class="finegroup">
+    <h3>Ngoài đường</h3>
+    <div class="fine"><span class="amt word">Đánh roi</span><div><h4>Vẽ bậy, dán sticker, phá đồ công</h4><p>Người nước ngoài cũng không được miễn. Dán sticker lên cột đèn cũng tính.</p></div></div>
+    <div class="fine"><span class="amt word">Truy tố</span><div><h4>Nói, đăng bài xúc phạm tôn giáo hoặc chủng tộc</h4><p>Đăng Facebook hay TikTok trong lúc đang ở Singapore cũng tính.</p></div></div>
+    <div class="fine"><span class="amt word">Bắt giữ</span><div><h4>Tham gia biểu tình</h4><p>Người nước ngoài không được tham gia, kể cả ở Speakers' Corner.</p></div></div>
+    <div class="fine"><span class="amt">S$10.000</span><div><h4>Dùng wifi nhà người khác khi chưa xin</h4><p>Bị xử theo Luật Lạm dụng máy tính. Wireless@SG và wifi miễn phí công khai thì dùng thoải mái.</p></div></div>
+    <div class="fine"><span class="amt">S$5.000</span><div><h4>Cho chim bồ câu hoặc khỉ ăn</h4><p>Khỉ ở MacRitchie với Bukit Timah hay giật túi đồ ăn, đừng cầm túi nilon lủng lẳng.</p></div></div>
+    <div class="fine"><span class="amt word">Phạt nặng</span><div><h4>Chụp khu quân sự, khu cấm, bay drone không phép</h4><p>Thấy biển cấm chụp là cất máy. Drone thì nhiều khu phải xin phép CAAS, gần sân bay cấm hẳn.</p></div></div>
+    <div class="fine"><span class="amt">S$3.000</span><div><h4>Câu cá chỗ không cho phép</h4></div></div>
+    <div class="fine"><span class="amt">S$2.000</span><div><h4>Uống rượu ngoài đường từ 22:30 đến 7:00</h4><p>Sau 22:30 cửa hàng cũng thôi bán rượu mang về.</p></div></div>
+    <div class="fine"><span class="amt">S$2.000</span><div><h4>Khoả thân mà người ngoài nhìn thấy</h4><p>Đứng trong nhà mà để hở rèm, người bên ngoài nhìn thấy, cũng tính.</p></div></div>
+    <div class="fine"><span class="amt">S$1.000</span><div><h4>Hút thuốc ngoài khu cho phép</h4><p>Chỉ hút ở chỗ có ô kẻ vàng hoặc có biển. Orchard Road gần như cấm cả tuyến. Dưới 21 tuổi thì không được mua, không được cầm thuốc lá.</p></div></div>
+    <div class="fine"><span class="amt">S$1.000</span><div><h4>Băng qua đường sai chỗ</h4><p>Trong vòng 50 m có vạch qua đường thì phải đi vạch. Phạt tại chỗ thường là S$50.</p></div></div>
+    <div class="fine"><span class="amt">S$1.000</span><div><h4>Khạc nhổ</h4></div></div>
+    <div class="fine"><span class="amt">S$1.000</span><div><h4>Tè trong thang máy</h4><p>Thang máy chung cư HDB có gắn cảm biến.</p></div></div>
+    <div class="fine"><span class="amt">S$500</span><div><h4>Đi vệ sinh công cộng xong không giật nước</h4></div></div>
+    <div class="fine"><span class="amt">S$300</span><div><h4>Xả rác</h4><p>Đây là mức thấp nhất. Đầu lọc thuốc lá, tờ hoá đơn cũng bị tính.</p></div></div>
+  </div>
+
+  <div class="finegroup">
+    <h3>Trên tàu xe và ở hawker</h3>
+    <div class="fine"><span class="amt">S$500</span><div><h4>Ăn uống trên MRT, xe buýt, trong ga</h4><p>Uống ngụm nước lọc cũng tính.</p></div></div>
+    <div class="fine"><span class="amt word">Cấm</span><div><h4>Mang sầu riêng lên MRT, xe buýt</h4><p>Nhiều khách sạn cũng cấm mang vào.</p></div></div>
+    <div class="fine"><span class="amt word">Phạt</span><div><h4>Chạy scooter điện trên vỉa hè</h4></div></div>
+    <div class="fine"><span class="amt soft">Nhắc rồi phạt</span><div><h4>Ăn xong không dọn khay ở hawker</h4><p>NEA bắt buộc từ 2021. Đĩa đồ halal phải trả vào chỗ riêng, đừng để lẫn.</p></div></div>
+  </div>
+</section>
+
+<!-- ================= PLACES ================= -->
+<section id="di">
+  <h2>Đi đâu</h2>
+  <p class="lead">Ba mươi mấy chỗ, lọc theo kiểu đi. Giờ mở cửa hay đổi, check lại Google Maps trước khi đi.</p>
+  <div class="filters" role="group" aria-label="Lọc địa điểm">
+    <button type="button" data-f="all" aria-pressed="true">Tất cả</button>
+    <button type="button" data-f="icon" aria-pressed="false">Lần đầu phải ghé</button>
+    <button type="button" data-f="local" aria-pressed="false">Ít khách du lịch</button>
+    <button type="button" data-f="photo" aria-pressed="false">Lên ảnh đẹp</button>
+    <button type="button" data-f="food" aria-pressed="false">Ăn</button>
+    <button type="button" data-f="free" aria-pressed="false">Không mất tiền</button>
+    <button type="button" data-f="new" aria-pressed="false">Mới mở 2026</button>
+  </div>
+  <div class="places" id="places">
+    <div class="pl" data-t="icon photo"><div class="pl-top"><h3>Marina Bay Sands SkyPark</h3><span class="where">Marina Bay</span></div><p>Đài ngắm cảnh tầng 56. Lên lúc hoàng hôn, xuống là kịp xem Spectra.</p><div class="meta"><span class="cash">có vé</span></div></div>
+    <div class="pl" data-t="icon free photo"><div class="pl-top"><h3>Spectra</h3><span class="where">Event Plaza, Marina Bay</span></div><p>Show nước và laser trước MBS, thường 20:00 và 21:00, thứ 6 và thứ 7 có thêm suất 22:00.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="icon free photo"><div class="pl-top"><h3>Supertree Grove, show Garden Rhapsody</h3><span class="where">Gardens by the Bay</span></div><p>Show đèn 19:45 và 20:45. Dân ở đây nằm ngửa ra sàn mà xem. Cloud Forest với Flower Dome thì mất tiền vé.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="icon free"><div class="pl-top"><h3>Merlion Park</h3><span class="where">Marina Bay</span></div><p>Đến sớm trước 8 giờ cho vắng, lúc đó chụp không bị chen.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="icon free photo"><div class="pl-top"><h3>Rain Vortex</h3><span class="where">Jewel Changi</span></div><p>Thác nước trong nhà cao nhất thế giới, tối có show đèn. Ghé hôm về là vừa.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="icon new"><div class="pl-top"><h3>Singapore Oceanarium</h3><span class="where">Sentosa</span></div><p>Thay chỗ S.E.A. Aquarium cũ, to gấp ba, có 22 khu.</p><div class="meta"><span class="new">mới</span><span class="cash">có vé</span></div></div>
+    <div class="pl" data-t="new"><div class="pl-top"><h3>Exploria</h3><span class="where">Mandai</span></div><p>Khu thiên nhiên trong nhà to nhất Đông Nam Á. Để dành cho buổi chiều mưa.</p><div class="meta"><span class="new">mới</span><span class="cash">có vé</span></div></div>
+    <div class="pl" data-t="new"><div class="pl-top"><h3>Rainforest Wild Adventure</h3><span class="where">Mandai</span></div><p>Phần phía Đông mở từ tháng 5/2026, có zipline, cầu treo trên tán cây và hươu okapi.</p><div class="meta"><span class="new">mới</span><span class="cash">có vé</span></div></div>
+    <div class="pl" data-t="new free"><div class="pl-top"><h3>Mandai Boardwalk</h3><span class="where">Mandai</span></div><p>3 km đường gỗ xuyên rừng, đôi khi thấy cả thú trong sở thú mà không cần mua vé.</p><div class="meta"><span class="new">mới</span><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="new"><div class="pl-top"><h3>Harry Potter: Visions of Magic</h3><span class="where">Resorts World Sentosa</span></div><p>Triển lãm đa phương tiện. Cuối tuần nên đặt vé trước.</p><div class="meta"><span class="new">mới</span><span class="cash">có vé</span></div></div>
+    <div class="pl" data-t="new"><div class="pl-top"><h3>IMBA Theatre</h3><span class="where">Gardens by the Bay, bãi cỏ phía Tây</span></div><p>Rạp chiếu nghệ thuật trùm cả phòng, mở đầu năm 2026.</p><div class="meta"><span class="new">mới</span><span class="cash">có vé</span></div></div>
+
+    <div class="pl" data-t="photo free"><div class="pl-top"><h3>Haji Lane và Masjid Sultan</h3><span class="where">Kampong Glam</span></div><p>Hẻm vẽ graffiti, quán indie, ngay cạnh thánh đường mái vàng. Muốn vào thánh đường thì mặc kín vai và gối.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="local photo free"><div class="pl-top"><h3>Dãy nhà Peranakan ở Koon Seng Road</h3><span class="where">Joo Chiat</span></div><p>Dãy nhà phố màu pastel ăn ảnh nhất đảo. Chụp xong đi bộ ra Katong ăn laksa.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="local photo free"><div class="pl-top"><h3>Tiong Bahru</h3><span class="where">phía Tây Chinatown</span></div><p>Khu chung cư art deco cũ nhất Singapore, nhiều quán cà phê và hiệu sách nhỏ. Ăn sáng ở chợ Tiong Bahru.</p><div class="meta"><span class="free">đi dạo miễn phí</span></div></div>
+    <div class="pl" data-t="free photo"><div class="pl-top"><h3>Chùa Răng Phật</h3><span class="where">Chinatown</span></div><p>Lên tầng mái có vườn lan và vòng quay kinh. Khách đến đây ít ai biết mà lên.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="local free photo"><div class="pl-top"><h3>Henderson Waves</h3><span class="where">Southern Ridges</span></div><p>Cây cầu đi bộ hình con sóng, cao nhất đảo. Đi từ Mount Faber sang lúc chiều tà.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="photo free"><div class="pl-top"><h3>Đường hầm cây ở Fort Canning</h3><span class="where">Fort Canning Park</span></div><p>Cầu thang xoắn ngước lên thấy vòm cây tròn. Trưa là có hàng người chờ chụp, nên đến sớm.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="local photo"><div class="pl-top"><h3>Skybridge Pinnacle@Duxton</h3><span class="where">Tanjong Pagar</span></div><p>Cầu nối tầng 50 của một khu chung cư nhà nước, nhìn xuống cả khu CBD. Vé vài đô, mỗi ngày giới hạn lượt, xem giờ trước.</p><div class="meta"><span class="cash">vé rẻ</span></div></div>
+    <div class="pl" data-t="local free"><div class="pl-top"><h3>Haw Par Villa</h3><span class="where">Pasir Panjang</span></div><p>Công viên tượng thần thoại Trung Hoa, vừa kỳ vừa hơi rợn. Khu Thập điện Diêm Vương là đoạn đáng nhớ nhất.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="local free"><div class="pl-top"><h3>Rail Corridor và ga Bukit Timah cũ</h3><span class="where">Bukit Timah</span></div><p>Đường ray tàu hoả cũ giờ thành đường mòn xanh. Ngày thường đi vắng hơn hẳn cuối tuần.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="local photo"><div class="pl-top"><h3>Pulau Ubin</h3><span class="where">đi đò từ Changi Point</span></div><p>Hòn đảo vẫn giữ dáng làng chài Singapore những năm 60. Đi đò trả tiền mặt, ra đảo thuê xe đạp mà chạy.</p><div class="meta"><span class="cash">tiền mặt</span></div></div>
+    <div class="pl" data-t="local free"><div class="pl-top"><h3>Sungei Buloh Wetland Reserve</h3><span class="where">Kranji</span></div><p>Rừng ngập mặn, may thì gặp cá sấu nước mặn với kỳ đà. Mở 7:00 đến 19:00, trong đó ít nhà vệ sinh.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="local free photo"><div class="pl-top"><h3>Kong Meng San Phor Kark See</h3><span class="where">Bishan</span></div><p>Quần thể chùa to nhất Singapore, mái vàng rộng mênh mông. Mở 8:00 đến 16:00, căng tin chay bán từ 9:00 đến 14:00.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="local free"><div class="pl-top"><h3>Coney Island</h3><span class="where">Punggol</span></div><p>Đảo hoang có cầu nối vào, nửa rừng nửa bãi biển. Mang theo thuốc chống muỗi.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="local free photo"><div class="pl-top"><h3>Kampong Lorong Buangkok</h3><span class="where">Hougang</span></div><p>Làng kampong cuối cùng còn lại trên đảo chính, vẫn có người ở. Đi nhẹ nói khẽ, chụp ai thì hỏi trước.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+    <div class="pl" data-t="local"><div class="pl-top"><h3>Thow Kwang Pottery Jungle</h3><span class="where">Lorong Tawas</span></div><p>Lò rồng nung gốm cuối cùng còn đỏ lửa. Học một buổi nặn gốm khoảng S$45.</p><div class="meta"><span class="cash">có phí</span></div></div>
+    <div class="pl" data-t="local free photo"><div class="pl-top"><h3>Hải đăng Raffles Marina</h3><span class="where">Tuas</span></div><p>Ngắm hoàng hôn, nhìn thẳng sang bờ Malaysia. Xa trung tâm, nên gọi Grab.</p><div class="meta"><span class="free">miễn phí</span></div></div>
+
+    <div class="pl" data-t="food icon"><div class="pl-top"><h3>Phố satay Lau Pa Sat</h3><span class="where">Raffles Place</span></div><p>Chập tối, đoạn Boon Tat Street chặn xe, kê bàn ra giữa đường nướng satay.</p><div class="meta"><span class="cash">tiền mặt</span></div></div>
+    <div class="pl" data-t="food"><div class="pl-top"><h3>Maxwell Food Centre</h3><span class="where">Chinatown</span></div><p>Nhiều người đến vì quầy cơm gà Hải Nam Tian Tian. Né giờ trưa, đến trước 11:30 hoặc sau 14:00.</p><div class="meta"><span class="cash">tiền mặt</span></div></div>
+    <div class="pl" data-t="food local"><div class="pl-top"><h3>Old Airport Road Food Centre</h3><span class="where">Geylang</span></div><p>Hawker dân local đi ăn thật, nhiều quầy mở vài chục năm. Khách du lịch hiếm.</p><div class="meta"><span class="cash">tiền mặt</span></div></div>
+    <div class="pl" data-t="food local"><div class="pl-top"><h3>Tekka Centre</h3><span class="where">Little India</span></div><p>Biryani, roti prata, tầng dưới là chợ ướt. Sáng chủ nhật đông nghẹt.</p><div class="meta"><span class="cash">tiền mặt</span></div></div>
+    <div class="pl" data-t="food local"><div class="pl-top"><h3>Changi Village Hawker</h3><span class="where">Changi Village</span></div><p>Nổi tiếng món nasi lemak. Đi Pulau Ubin về ghé ăn là hợp.</p><div class="meta"><span class="cash">tiền mặt</span></div></div>
+    <div class="pl" data-t="food"><div class="pl-top"><h3>Newton Food Centre</h3><span class="where">Newton</span></div><p>Buổi tối vui, nhưng có cò kéo khách. Gọi hải sản thì hỏi giá theo kg và bắt cân trước mặt.</p><div class="meta"><span class="care">cẩn thận giá</span></div></div>
+  </div>
+  <p class="none" id="none" hidden>Không có chỗ nào khớp bộ lọc này.</p>
+</section>
+
+<!-- ================= TIPS ================= -->
+<section id="meo">
+  <h2>Mẹo local</h2>
+
+  <div class="tip">
+    <h3>Ăn ở hawker</h3>
+    <ul>
+      <li>Trên bàn có gói khăn giấy, cái ô hay tấm thẻ nhân viên nghĩa là có người giữ rồi. Dân ở đây gọi là <em>chope</em>. Đừng ngồi vào, càng đừng gạt đồ của người ta ra.</li>
+      <li>Làm theo đúng thứ tự này: giữ bàn trước, đi gọi món sau, rồi bưng về bàn. Quầy nào gọi và trả tiền quầy nấy.</li>
+      <li>Quầy nổi tiếng thường nghỉ một ngày trong tuần và bán hết từ đầu giờ chiều.</li>
+      <li>Nhiều quầy chỉ nhận QR của ngân hàng Singapore, thẻ mình không quét được. Mang tiền lẻ theo.</li>
+      <li>Hàng dài toàn người local là ngon. Hàng dài toàn khách du lịch thì nhiều khi chỉ là đang nổi trên TikTok.</li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <h3>Gọi cà phê như người ở đây</h3>
+    <table class="kopi">
+      <tr><th>Kopi</th><td>cà phê sữa đặc</td></tr>
+      <tr><th>Kopi O</th><td>cà phê đen có đường</td></tr>
+      <tr><th>Kopi C</th><td>cà phê với sữa bay hơi và đường</td></tr>
+      <tr><th>Kosong</th><td>không đường</td></tr>
+      <tr><th>Siew dai</th><td>ít ngọt</td></tr>
+      <tr><th>Peng</th><td>thêm đá</td></tr>
+      <tr><th>Teh</th><td>đổi chữ Kopi thành Teh là thành trà sữa, mấy chữ phía sau giữ nguyên nghĩa</td></tr>
+    </table>
+    <span class="order">Kopi C siew dai peng: cà phê sữa, ít ngọt, đá</span>
+  </div>
+
+  <div class="tip">
+    <h3>Tiền nong</h3>
+    <ul>
+      <li>Menu ghi giá kèm "++" nghĩa là chưa có 10% phí phục vụ và 9% GST. Tính ra trả thêm khoảng 20%.</li>
+      <li>Không ai đợi tiền tip.</li>
+      <li>Đổi tiền ở The Arcade (Raffles Place) hoặc Mustafa Centre thường được giá hơn ngoài sân bay.</li>
+      <li>Định mua lens hay body máy thì vào hãng hoặc chuỗi lớn. Ở Sim Lim Square có vài shop nhỏ từng ép khách mua thêm bảo hành, đổi giá ngay sau khi quẹt thẻ.</li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <h3>Đi lại</h3>
+    <ul>
+      <li>Quẹt thẳng thẻ Visa, Master hoặc Apple Pay, Google Pay ở cổng MRT và trên xe buýt. Khỏi mua thẻ EZ-Link.</li>
+      <li>Đi thang cuốn thì đứng bên trái, ai vội đi bên phải.</li>
+      <li>Ngoài Grab còn có Gojek, TADA, Ryde. Lúc mưa hay giờ cao điểm mở cả mấy app ra so giá.</li>
+      <li>Ghế ưu tiên trên MRT để dành cho người già và bà bầu, tàu vắng người ở đây cũng để trống.</li>
+      <li>Mưa sét là Supertree, bãi biển, zipline có thể đóng tạm. Đừng xếp lịch sít quá.</li>
+    </ul>
+  </div>
+
+  <div class="tip">
+    <h3>Nghe Singlish cho khỏi ngơ</h3>
+    <ul>
+      <li><em>Can lah</em> là được mà. <em>Cannot</em> là không được.</li>
+      <li><em>Shiok</em> là đã, ngon. <em>Paiseh</em> là ngại quá, xin lỗi nhé.</li>
+      <li><em>Makan</em> là ăn. <em>Tapau</em> là gói mang về.</li>
+      <li><em>Kiasu</em> là sợ thiệt, cái tính khiến người Singapore xếp hàng từ sớm để giành suất.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>Tổng hợp từ trang của ICA, Singapore Customs, IRAS và vài trang du lịch, tính đến 01/10/2026. Luật với giờ mở cửa có thể đổi, sát ngày đi thì check lại trang chính thức. Địa chỉ phòng xuất nhập cảnh, giờ mở Pinnacle@Duxton và mức phạt cho chim ăn mình chưa kiểm được nguồn chính thức.</footer>
+</div>
+
+<script>
+(function(){
+  var KEY='sg-trip-checks-v1';
+  var boxes=[].slice.call(document.querySelectorAll('.it input[type=checkbox]'));
+  var state={};
+  try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){state={}}
+  boxes.forEach(function(b){if(state[b.id])b.checked=true});
+  function save(){try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}}
+  function update(){
+    var done=boxes.filter(function(b){return b.checked}).length;
+    document.getElementById('done').textContent=done;
+    document.getElementById('total').textContent=boxes.length;
+    document.getElementById('fill').style.width=(boxes.length?done/boxes.length*100:0)+'%';
+    document.querySelectorAll('[data-group]').forEach(function(g){
+      var bs=g.querySelectorAll('input[type=checkbox]'),n=0;
+      bs.forEach(function(b){if(b.checked)n++});
+      g.querySelector('.cnt').textContent=n+' trên '+bs.length;
+      g.classList.toggle('full',n===bs.length);
+    });
+  }
+  boxes.forEach(function(b){b.addEventListener('change',function(){state[b.id]=b.checked;save();update()})});
+  update();
+
+  var reset=document.getElementById('reset'),armed=false,timer;
+  function disarm(){armed=false;reset.classList.remove('armed');reset.textContent='Bỏ tick hết'}
+  reset.addEventListener('click',function(){
+    if(!armed){armed=true;reset.classList.add('armed');reset.textContent='Bấm lần nữa để bỏ hết';timer=setTimeout(disarm,3000);return}
+    clearTimeout(timer);disarm();
+    boxes.forEach(function(b){b.checked=false});state={};save();update();
+  });
+
+  var btns=[].slice.call(document.querySelectorAll('.filters button'));
+  var places=[].slice.call(document.querySelectorAll('#places .pl'));
+  var none=document.getElementById('none');
+  btns.forEach(function(btn){btn.addEventListener('click',function(){
+    var f=btn.dataset.f,shown=0;
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===btn?'true':'false')});
+    places.forEach(function(p){var ok=f==='all'||(' '+p.dataset.t+' ').indexOf(' '+f+' ')>=0;p.hidden=!ok;if(ok)shown++});
+    none.hidden=shown>0;
+  })});
+  // ---- currency ----
+  var RKEY='sg-trip-rate-v1', rate=20320;
+  try{var r=parseFloat(localStorage.getItem(RKEY));if(r>1000)rate=r}catch(e){}
+  var inS=document.getElementById('inSgd'),inV=document.getElementById('inVnd'),inR=document.getElementById('inRate'),big=document.getElementById('rateBig');
+  function vn(n){return Math.round(n).toLocaleString('vi-VN')}
+  function num(str){return parseFloat(String(str).replace(/[^\d.,]/g,'').replace(/\./g,'').replace(',', '.'))}
+  function numS(str){return parseFloat(String(str).replace(',', '.').replace(/[^\d.]/g,''))}
+  function paintRef(){
+    big.textContent=vn(rate);
+    document.querySelectorAll('#refTable tr').forEach(function(tr){tr.children[1].textContent=vn(tr.dataset.s*rate)+' ₫'});
+  }
+  function fromS(){var v=numS(inS.value);inV.value=isNaN(v)?'':vn(v*rate)}
+  function fromV(){var v=num(inV.value);inS.value=isNaN(v)?'':(Math.round(v/rate*100)/100).toString()}
+  inS.addEventListener('input',fromS);
+  inV.addEventListener('input',fromV);
+  inV.addEventListener('blur',function(){var v=num(inV.value);if(!isNaN(v))inV.value=vn(v)});
+  inR.value=Math.round(rate);
+  inR.addEventListener('input',function(){var v=num(inR.value);if(v>1000){rate=v;try{localStorage.setItem(RKEY,String(v))}catch(e){}paintRef();fromS()}});
+  paintRef();fromS();
+})();
+</script>
+</body>
+</html>
